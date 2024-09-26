@@ -11,12 +11,12 @@ public class MethodsToAnalyze {
 	 * @param value int that may be in array
 	 * @return index where value is found or -1 if not found
 	 */
-	public static int find(int[] array, int value) {
-		for (int i = 0; i < array.length; i++) {
-			if (array[i] == value) {
-				return i;
+	public static int find(int[] array, int value) { // 3n + 2
+		for (int i = 0; i < array.length; i++) { // 1 (check) + 1(create int) in all cases
+			if (array[i] == value) { // !1 (check)
+				return i; //ends code
 			}
-		}
+		} // !1 (i++) + !1 (check)
 		return -1;
 	}
 
