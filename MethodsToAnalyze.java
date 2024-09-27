@@ -27,11 +27,11 @@ public class MethodsToAnalyze {
 	 * @param newValue new value
 	 */
 	public static void replaceAll(int[] array, int oldValue, int newValue) {
-		int index = find(array, oldValue);
-		while (index > -1) {
-			array[index] = newValue;
-			index = find(array, oldValue);
-		}
+		int index = find(array, oldValue); // 1 + 3n+2 (set)(find() formula)
+		while (index > -1) { // 1 (check)
+			array[index] = newValue; // !1
+			index = find(array, oldValue); // ! 1 + 3n+2 (set)(find() formula)
+		} // !1 (check)
 	}
 	
 	/**
@@ -39,13 +39,13 @@ public class MethodsToAnalyze {
 	 * @param array ints that need to be ordered 
 	 */
 	public static void sortIt(int[] array) {
-		for (int next = 1; next < array.length; next++) {
-			int value = array[next];
-			int index = next;
-			while (index > 0 && value < array[index - 1]) {
+		for (int next = 1; next < array.length; next++) { // 1 + 1 (set)(check)
+			int value = array[next]; // !1
+			int index = next; // !1
+			while (index > 0 && value < array[index - 1]) { // !1(check)
 				array[index] = array[index - 1];
 				index--;
-			}
+			} // !! 1 (check)
 			array[index] = value;
 		}
 	}
